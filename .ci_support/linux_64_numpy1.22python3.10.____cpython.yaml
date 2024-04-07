@@ -11,7 +11,7 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 fortran_compiler:
-- gfortran
+- gfortran==13.2.0
 numpy:
 - '1.22'
 pin_run_as_build:
