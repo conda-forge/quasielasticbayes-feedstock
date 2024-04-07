@@ -12,7 +12,7 @@ source:
 build:
   skip: True  # [py<310 or py>310]
   script: {{ PYTHON }} setup.py install
-  number: 0
+  number: 1
 
 requirements:
   build:
