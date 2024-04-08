@@ -10,7 +10,7 @@ source:
   sha256: 1aa89b704b0bce81749b576b633f87f1c746d05c4d54591f6f65f3ccf0b045b8
 
 build:
-  skip: True  # [py<310 or py>310 or osx]
+  skip: True  # [py<310 or py>310]
   script: {{ PYTHON }} setup.py install
   number: 0
 
