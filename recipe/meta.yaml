@@ -11,6 +11,7 @@ source:
 
 build:
   skip: True  # [py<310 or py>310]
+  error_overlinking: false
   script: {{ PYTHON }} setup.py install
   number: 1
 
