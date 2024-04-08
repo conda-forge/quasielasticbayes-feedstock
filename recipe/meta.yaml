@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.b5.tar.gz
-  sha256: 64eb64ea909eb40519519756f4763d07ab096454be6f7520f65756fbefe3841b
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.b6.tar.gz
+  sha256: 1aa89b704b0bce81749b576b633f87f1c746d05c4d54591f6f65f3ccf0b045b8
 
 build:
   skip: True  # [py<310 or py>310 or osx]
