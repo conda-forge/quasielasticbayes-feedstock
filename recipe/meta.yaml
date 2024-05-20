@@ -20,14 +20,13 @@ requirements:
     - {{ fortran_compiler }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy<2                                # [build_platform != target_platform]
   host:
     - python
     - setuptools
-    - numpy
+    - numpy<2
   run:
     - python
-    - numpy
 
 test:
   imports:
