@@ -19,12 +19,12 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy<2                                # [build_platform != target_platform]
+    - numpy <2                               # [build_platform != target_platform]
     - {{ fortran_compiler }}
   host:
     - python
     - setuptools
-    - numpy<2
+    - numpy <2
   run:
     - python
 
