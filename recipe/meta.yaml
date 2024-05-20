@@ -13,21 +13,20 @@ build:
   skip: True  # [py<310 or py>310]
   error_overlinking: false
   script: {{ PYTHON }} setup.py install
-  number: 1
+  number: 2
 
 requirements:
   build:
     - {{ fortran_compiler }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy <2                               # [build_platform != target_platform]
   host:
     - python
     - setuptools
-    - numpy
+    - numpy <2
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
