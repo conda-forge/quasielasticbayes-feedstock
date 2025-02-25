@@ -10,7 +10,7 @@ source:
   sha256: 980313e642b0d5efcda7f37528d8ded2d28b577887122a9c1d4158cef61de058
 
 build:
-  skip: True  # [py<310 or py>310]
+  skip: True  # [py<310 or py>311]
   error_overlinking: false
   script: {{ PYTHON }} setup.py install
   number: 1
@@ -23,7 +23,9 @@ requirements:
     - {{ fortran_compiler }}
   host:
     - python
-    - setuptools
+    # limit setuptools version to avoid ModuleNotFoundError: No module named 'distutils.msvccompiler'
+    # when building the package
+    - setuptools <74
     - numpy
   run:
     - python
