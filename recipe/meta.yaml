@@ -23,7 +23,7 @@ requirements:
     - {{ fortran_compiler }}
   host:
     - python
-    - setuptools<74
+    - setuptools <74
     - numpy
   run:
     - python
