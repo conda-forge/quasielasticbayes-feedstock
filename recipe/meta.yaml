@@ -6,14 +6,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 980313e642b0d5efcda7f37528d8ded2d28b577887122a9c1d4158cef61de058
 
 build:
   skip: True  # [py<310 or py>310]
   error_overlinking: false
   script: {{ PYTHON }} setup.py install
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -23,7 +23,7 @@ requirements:
     - {{ fortran_compiler }}
   host:
     - python
-    - setuptools
+    - setuptools <74
     - numpy
   run:
     - python

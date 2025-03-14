@@ -1,3 +1,5 @@
 fortran_compiler:
   - m2w64-toolchain_win-64==2.5.0          # [win]
-  - gfortran==13.2.0                       # [linux or osx]
+  - gfortran==13.2.0                       # [linux]
+  - gfortran==13.2.0                       # [osx and not arm64]
+  - gfortran_osx-arm64==13.2.0             # [osx and arm64]
