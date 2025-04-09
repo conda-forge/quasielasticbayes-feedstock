@@ -10,9 +10,9 @@ source:
   git_rev: v{{ version }}
 
 build:
+  skip: True  # [py<39]
+  number: 0
   error_overlinking: false
-  script: {{ PYTHON }} setup.py install
-  number: 2
 
 requirements:
   build:
@@ -20,9 +20,14 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    - meson-python                           # [build_platform != target_platform]
   host:
     - python
     - numpy
+    - pip
+    - meson-python
   run:
     - python
 
