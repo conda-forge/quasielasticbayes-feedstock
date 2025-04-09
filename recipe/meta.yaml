@@ -11,7 +11,7 @@ source:
 
 build:
   skip: True  # [py<39]
-  number: 0
+  number: 1
   error_overlinking: false
 
 requirements:
@@ -19,7 +19,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - {{ compiler('fortran') }}              # [not win64]
+    - {{ compiler("fortran") }}
     - {{ compiler('c') }}                    # [not win64]
     - {{ stdlib('c') }}                      # [not win64]
     - m2w64-toolchain_win-64 ==2.5.0         # [win64]
